@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-import { Header } from "./Header";
+import { Header } from './Header'
 
 export function Tasks() {
-  const [taskName, setTaskName] = useState("teste");
+  const [taskName, setTaskName] = useState('teste')
   const [tasks, setTasks] = useState([
-    { taskName: "Estudar React" },
-    { taskName: "Estudar Node" },
-    { taskName: "Estudar TypeScript" },
-  ]);
+    { taskName: 'Estudar React' },
+    { taskName: 'Estudar Node' },
+    { taskName: 'Estudar TypeScript' },
+  ])
 
   return (
     <div>
@@ -23,8 +23,8 @@ export function Tasks() {
       />
       <button
         onClick={() => {
-          setTasks([...tasks, { taskName }]);
-          setTaskName("");
+          setTasks([...tasks, { taskName }])
+          setTaskName('')
         }}
       >
         Add Task
@@ -38,5 +38,5 @@ export function Tasks() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

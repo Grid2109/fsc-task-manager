@@ -1,9 +1,11 @@
 import { Tasks } from './components/Tasks'
 
 export function App() {
-    return (
-        <>
-            <Tasks />
-        </>
-    )
+  const name = 'John Doe'
+  console.log(`Hello, ${name}!`)
+  return (
+    <>
+      <Tasks />
+    </>
+  )
 }
