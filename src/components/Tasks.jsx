@@ -13,7 +13,7 @@ export function Tasks() {
   return (
     <div>
       <Header>
-        <h1 className="p-6">Add Task</h1>
+        <h1 className="mt-2 bg-red-500 p-6">Add Task</h1>
       </Header>
       <input
         type="text"
