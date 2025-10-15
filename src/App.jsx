@@ -1,11 +1,9 @@
-import { Tasks } from './components/Tasks'
+import { Sidebar } from './components/Sidebar'
 
 export function App() {
-  const name = 'John Doe'
-  console.log(`Hello, ${name}!`)
   return (
     <>
-      <Tasks />
+      <Sidebar />
     </>
   )
 }
