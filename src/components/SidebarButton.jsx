@@ -10,7 +10,10 @@ export const SidebarButton = ({ children, variant }) => {
   }
 
   return (
-    <a href="#" className={`roundend-lg px-6 py-3 ${getVariantClasses()}`}>
+    <a
+      href="#"
+      className={`roundend-lg flex items-center gap-2 px-6 py-3 ${getVariantClasses()}`}
+    >
       {children}
     </a>
   )
