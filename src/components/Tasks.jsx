@@ -20,7 +20,7 @@ export function Tasks() {
       if (task.id != taskId) {
         return task
       }
-      console.log(taskId, task.id)
+
       if (task.status === 'not_started') {
         return { ...task, status: 'in_progress' }
       }
@@ -35,6 +35,11 @@ export function Tasks() {
       return task
     })
 
+    setTasks(newTasks)
+  }
+
+  const handleDeleteClick = (taskId) => {
+    const newTasks = tasks.filter((task) => task.id != taskId)
     setTasks(newTasks)
   }
 
@@ -66,7 +71,8 @@ export function Tasks() {
             <TaskItem
               key={task.id}
               task={task}
-              handleTaskCheckboxClick={handleTaskCheckboxClick}
+              handleCheckboxClick={handleTaskCheckboxClick}
+              handleDeleteClick={handleDeleteClick}
             />
           ))}
         </div>
@@ -76,7 +82,8 @@ export function Tasks() {
             <TaskItem
               key={task.id}
               task={task}
-              handleTaskCheckboxClick={handleTaskCheckboxClick}
+              handleCheckboxClick={handleTaskCheckboxClick}
+              handleDeleteClick={handleDeleteClick}
             />
           ))}
         </div>
@@ -86,7 +93,8 @@ export function Tasks() {
             <TaskItem
               key={task.id}
               task={task}
-              handleTaskCheckboxClick={handleTaskCheckboxClick}
+              handleCheckboxClick={handleTaskCheckboxClick}
+              handleDeleteClick={handleDeleteClick}
             />
           ))}
         </div>
