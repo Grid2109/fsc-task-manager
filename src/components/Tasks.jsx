@@ -76,7 +76,10 @@ export function Tasks() {
             <AddIcon />
           </Button>
 
-          <AddTaskDialog isOpen={addTaskDialogIsOpen} />
+          <AddTaskDialog
+            isOpen={addTaskDialogIsOpen}
+            handleClose={() => setAddTaskDialogIsOpen(false)}
+          />
         </div>
       </div>
       <div className='rounded-xl bg-white p-6'>
