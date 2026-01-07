@@ -47,6 +47,11 @@ export function Tasks() {
     setTasks(newTasks)
   }
 
+  const handleAddTaskSubmit = (task) => {
+    setTasks([...tasks, task])
+    toast.success('Tarefa adicionada com sucesso!')
+  }
+
   const handleDeleteClick = (taskId) => {
     const newTasks = tasks.filter((task) => task.id != taskId)
     setTasks(newTasks)
@@ -79,6 +84,7 @@ export function Tasks() {
           <AddTaskDialog
             isOpen={addTaskDialogIsOpen}
             handleClose={() => setAddTaskDialogIsOpen(false)}
+            handleSubmit={handleAddTaskSubmit}
           />
         </div>
       </div>
