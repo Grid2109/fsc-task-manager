@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
 import { CSSTransition } from 'react-transition-group'
@@ -11,9 +11,17 @@ import { TimeSelect } from './TimeSelect'
 export const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-  const [time, setTime] = useState('')
+  const [time, setTime] = useState('morning')
 
   const nodeRef = useRef(null)
+
+  useEffect(() => {
+    if (!isOpen) {
+      setTitle('')
+      setDescription('')
+      setTime('')
+    }
+  }, [isOpen])
 
   const handleSaveClick = () => {
     handleSubmit({
