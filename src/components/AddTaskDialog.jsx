@@ -19,11 +19,14 @@ export const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
     if (!isOpen) {
       setTitle('')
       setDescription('')
-      setTime('')
+      setTime('morning')
     }
   }, [isOpen])
 
   const handleSaveClick = () => {
+    if (!title || !description || !time) {
+      return alert('Preencha todos os campos')
+    }
     handleSubmit({
       id: v4(),
       title,
