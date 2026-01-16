@@ -5,7 +5,7 @@ export default {
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
     },
-    extends: {
+    extend: {
       colors: {
         brand: {
           'dark-blue': '#35383E',
