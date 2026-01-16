@@ -1,7 +1,7 @@
 export const SidebarButton = ({ children, variant }) => {
   const getVariantClasses = () => {
     if (variant === 'unselected') {
-      return 'text-[brand-dark-blue]'
+      return 'text-brand-dark-blue'
     }
 
     if (variant === 'selected') {
