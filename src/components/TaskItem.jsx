@@ -4,13 +4,13 @@ import { Button } from './Button'
 export const TaskItem = ({ task, handleCheckboxClick, handleDeleteClick }) => {
   const getStatusClasses = () => {
     if (task.status === 'done') {
-      return 'bg-[brand-primary]  text-[brand-primary]'
+      return 'bg-brand-primary  text-brand-primary'
     }
     if (task.status === 'in_progress') {
-      return 'bg-[brand-process]   text-[brand-process]'
+      return 'bg-brand-process   text-brand-process'
     }
     if (task.status === 'not_started') {
-      return 'bg-[brand-dark-blue] bg-opacity-10 text-[brand-dark-blue]'
+      return 'bg-brand-dark-blue bg-opacity-10 text-brand-dark-blue'
     }
   }
 
@@ -37,8 +37,8 @@ export const TaskItem = ({ task, handleCheckboxClick, handleDeleteClick }) => {
       </div>
 
       <div className='flex items-center gap-2'>
-        <Button variant='ghost' onClick={() => handleDeleteClick(task.id)}>
-          <TrashIcon className='text-[brand-text-gray]' />
+        <Button color='ghost' onClick={() => handleDeleteClick(task.id)}>
+          <TrashIcon className='text-brand-text-gray' />
         </Button>
 
         <a href='#'>

@@ -62,21 +62,18 @@ export function Tasks() {
     <div className='w-full space-y-6 px-8 py-16'>
       <div className='flex w-full justify-between'>
         <div>
-          <span className='text-xs font-semibold text-[brand-primary]'>
+          <span className='text-xs font-semibold text-brand-primary'>
             Minhas tarefas
           </span>
           <h2 className='text-xl font-semibold'>Minhas tarefas</h2>
         </div>
 
         <div className='flex items-center gap-3'>
-          <Button variant='ghost'>
+          <Button color='ghost'>
             Limpar tarefas
             <TrashIcon />
           </Button>
-          <Button
-            variant='primary'
-            onClick={() => setAddTaskDialogIsOpen(true)}
-          >
+          <Button color='primary' onClick={() => setAddTaskDialogIsOpen(true)}>
             Nova tarefa
             <AddIcon />
           </Button>
