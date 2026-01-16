@@ -9,7 +9,7 @@ export function App() {
       <Toaster
         toastOptions={{
           style: {
-            color: '#35383E',
+            color: 'brand-dark-blue',
           },
         }}
       />

@@ -1,6 +1,6 @@
 export const InputLabel = (props) => {
   return (
-    <label {...props} className='text-sm font-semibold text-[#35383E]'>
+    <label {...props} className='text-brand-dark-blue text-sm font-semibold'>
       {props.children}
     </label>
   )

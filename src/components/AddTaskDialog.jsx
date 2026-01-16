@@ -79,10 +79,10 @@ export const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
             className='fixed bottom-0 left-0 top-0 flex h-screen w-screen items-center justify-center backdrop-blur-md'
           >
             <div className='rounded-xl bg-white p-5 text-center shadow'>
-              <h2 className='text-xl font-semibold text-[#35383E]'>
+              <h2 className='text-brand-dark-blue text-xl font-semibold'>
                 Nova tarefa
               </h2>
-              <p className='mt-1 text-sm text-[#9A9C9F]'>
+              <p className='text-brand-text-gray mt-1 text-sm'>
                 Insira as informações abaixo
               </p>
               <div className='flex w-[336px] flex-col space-y-4'>
