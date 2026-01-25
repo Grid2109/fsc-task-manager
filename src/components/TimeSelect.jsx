@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { forwardRef } from 'react'
 
 import { InputErrorMessage } from './inputErrorMessage'
@@ -24,3 +25,6 @@ export const TimeSelect = forwardRef((props, ref) => {
   )
 })
 TimeSelect.displayName = 'TimeSelect'
+TimeSelect.propTypes = {
+  errorMessage: PropTypes.string,
+}
