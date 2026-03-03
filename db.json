@@ -41,13 +41,6 @@
       "description": "Ler o primeiro capítulo",
       "time": "evening",
       "status": "not_started"
-    },
-    {
-      "id": "8a128dc3-7dd4-430d-a5ef-9684b22cefb2",
-      "title": "teste",
-      "description": "testeteste",
-      "time": "evening",
-      "status": "not_started"
     }
   ]
 }

@@ -16,10 +16,6 @@ import { TasksSeparator } from './TasksSeparator'
 export function Tasks() {
   const [tasks, setTasks] = useState([])
   const [addTaskDialogIsOpen, setAddTaskDialogIsOpen] = useState(false)
-  const morningTasks = tasks.filter((task) => task.time === 'morning')
-  const afternoonTasks = tasks.filter((task) => task.time === 'afternoon')
-  const eveningTasks = tasks.filter((task) => task.time === 'evening')
-
   useEffect(() => {
     const fetchTasks = async () => {
       const response = await fetch('http://localhost:3000/tasks', {
@@ -30,6 +26,21 @@ export function Tasks() {
     }
     fetchTasks()
   }, [])
+
+  const morningTasks = tasks.filter((task) => task.time === 'morning')
+  const afternoonTasks = tasks.filter((task) => task.time === 'afternoon')
+  const eveningTasks = tasks.filter((task) => task.time === 'evening')
+
+  const handleTaskDeleteClick = async (taskId) => {
+    const response = await fetch(`http://localhost:3000/tasks/${taskId}`, {
+      method: 'DELETE',
+    })
+    if (!response.ok) {
+      return toast.error('Erro ao deletar tarefa. Por favor, tente novamente.')
+    }
+    setTasks(tasks.filter((task) => task.id != taskId))
+    toast.success('Tarefa deletada com sucesso!')
+  }
 
   const handleTaskCheckboxClick = (taskId) => {
     const newTasks = tasks.map((task) => {
@@ -71,11 +82,11 @@ export function Tasks() {
     toast.success('Tarefa adicionada com sucesso!')
   }
 
-  const handleDeleteClick = (taskId) => {
-    const newTasks = tasks.filter((task) => task.id != taskId)
-    setTasks(newTasks)
-    toast.success('Tarefa removida com sucesso!')
-  }
+  // const handleDeleteClick = (taskId) => {
+  //   const newTasks = tasks.filter((task) => task.id != taskId)
+  //   setTasks(newTasks)
+  //   toast.success('Tarefa removida com sucesso!')
+  // }
 
   return (
     <div className='w-full space-y-6 px-8 py-16'>
@@ -112,7 +123,7 @@ export function Tasks() {
               key={task.id}
               task={task}
               handleCheckboxClick={handleTaskCheckboxClick}
-              handleDeleteClick={handleDeleteClick}
+              handleDeleteClick={handleTaskDeleteClick}
             />
           ))}
         </div>
@@ -123,7 +134,7 @@ export function Tasks() {
               key={task.id}
               task={task}
               handleCheckboxClick={handleTaskCheckboxClick}
-              handleDeleteClick={handleDeleteClick}
+              handleDeleteClick={handleTaskDeleteClick}
             />
           ))}
         </div>
@@ -134,7 +145,7 @@ export function Tasks() {
               key={task.id}
               task={task}
               handleCheckboxClick={handleTaskCheckboxClick}
-              handleDeleteClick={handleDeleteClick}
+              handleDeleteClick={handleTaskDeleteClick}
             />
           ))}
         </div>
