@@ -27,20 +27,6 @@
       "description": "Comprar mantimentos para a semana",
       "time": "afternoon",
       "status": "in_progress"
-    },
-    {
-      "id": "5",
-      "title": "Descansar",
-      "description": "Assistir a um filme ou série",
-      "time": "evening",
-      "status": "not_started"
-    },
-    {
-      "id": "6",
-      "title": "Ler livro sobre finanças",
-      "description": "Ler o primeiro capítulo",
-      "time": "evening",
-      "status": "not_started"
     }
   ]
 }
