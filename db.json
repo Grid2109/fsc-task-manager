@@ -36,13 +36,6 @@
       "status": "not_started"
     },
     {
-      "id": "6402f7fb-35a9-4115-ab98-f40d46aaf61c",
-      "title": "teste3",
-      "time": "evening",
-      "description": "teste3",
-      "status": "not_started"
-    },
-    {
       "id": "fb39c9fe-2314-4c5b-a57a-3472791d6c38",
       "title": "test4",
       "time": "morning",
@@ -50,24 +43,10 @@
       "status": "not_started"
     },
     {
-      "id": "1218c31c-c12e-472b-a1e0-c871af76b5ca",
-      "title": "teste6",
-      "time": "evening",
-      "description": "teste6",
-      "status": "not_started"
-    },
-    {
-      "id": "a44f5d1f-e79a-45b4-a547-f1c32c5af40b",
-      "title": "test9",
+      "id": "2779ba18-de0e-49fa-9a2c-9ae2afcf0fb6",
+      "title": "teste",
       "time": "morning",
-      "description": "teste9",
-      "status": "not_started"
-    },
-    {
-      "id": "4e3589b1-6f40-4cca-823a-cd491a73080f",
-      "title": "test5",
-      "time": "morning",
-      "description": "test5",
+      "description": "teste",
       "status": "not_started"
     }
   ]
