@@ -8,13 +8,6 @@
       "status": "done"
     },
     {
-      "id": "2",
-      "title": "Estudar JavaScript",
-      "description": "Estudar APIS, funções assíncronas",
-      "time": "afternoon",
-      "status": "done"
-    },
-    {
       "id": "3",
       "title": "Treinar",
       "description": "Fazer um treino de 30 minutos",
@@ -33,20 +26,6 @@
       "title": "teste1",
       "description": "teste1",
       "time": "evening",
-      "status": "not_started"
-    },
-    {
-      "id": "fb39c9fe-2314-4c5b-a57a-3472791d6c38",
-      "title": "test4",
-      "time": "afternoon",
-      "description": "test4",
-      "status": "not_started"
-    },
-    {
-      "id": "e89249cc-7f6b-41ca-9b6b-2353526c608f",
-      "title": "Treinar lógica de programação",
-      "time": "afternoon",
-      "description": "Usando IA como mentor sênior",
       "status": "not_started"
     }
   ]
