@@ -10,22 +10,22 @@
     {
       "id": "2",
       "title": "Estudar JavaScript",
-      "description": "Completar o curso de JavaScript na plataforma FSC",
-      "time": "morning",
+      "description": "Estudar APIS, funções assíncronas",
+      "time": "afternoon",
       "status": "done"
     },
     {
       "id": "3",
       "title": "Treinar",
       "description": "Fazer um treino de 30 minutos",
-      "time": "afternoon",
+      "time": "evening",
       "status": "in_progress"
     },
     {
       "id": "4",
       "title": "Fazer compras",
       "description": "Comprar mantimentos para a semana",
-      "time": "afternoon",
+      "time": "evening",
       "status": "in_progress"
     },
     {
@@ -38,15 +38,22 @@
     {
       "id": "fb39c9fe-2314-4c5b-a57a-3472791d6c38",
       "title": "test4",
-      "time": "morning",
+      "time": "afternoon",
       "description": "test4",
       "status": "not_started"
     },
     {
       "id": "2779ba18-de0e-49fa-9a2c-9ae2afcf0fb6",
-      "title": "teste",
+      "title": "Comprar milho para os   patos e galinha",
       "time": "morning",
-      "description": "teste",
+      "description": "Pegar o número do Wagner",
+      "status": "not_started"
+    },
+    {
+      "id": "e89249cc-7f6b-41ca-9b6b-2353526c608f",
+      "title": "Treinar lógica de programação",
+      "time": "afternoon",
+      "description": "Usando IA como mentor sênior",
       "status": "not_started"
     }
   ]
