@@ -1,4 +1,4 @@
-import { useEffect, useRef,useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { toast } from 'sonner'
@@ -90,6 +90,17 @@ export const TaskDetailsPage = () => {
     toast.success('Tarefa atualizada com sucesso!')
   }
 
+  const handleDeleteClick = async () => {
+    const response = await fetch(`http://localhost:3000/tasks/${taskId}`, {
+      method: 'DELETE',
+    })
+    if (!response.ok) {
+      return toast.error('Ocorreu um erro ao deletar a tarefa.')
+    }
+    toast.success('Tarefa deletada com sucesso!')
+    navigate(-1)
+  }
+
   const titleError = errors.find((error) => error.inputName === 'title')
   const descriptionError = errors.find(
     (error) => error.inputName === 'description'
@@ -122,7 +133,11 @@ export const TaskDetailsPage = () => {
             <h1 className='mt-2 text-xl font-semibold'>{task?.title}</h1>
           </div>
 
-          <Button className='h-fit self-end' color='danger'>
+          <Button
+            className='h-fit self-end'
+            color='danger'
+            onClick={handleDeleteClick}
+          >
             <TrashIcon />
             Deletar Tarefa
           </Button>
