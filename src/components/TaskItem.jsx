@@ -20,7 +20,7 @@ export const TaskItem = ({ task, handleCheckboxClick, onDeleteSucess }) => {
         'Erro ao deletar a tarefa. Por favor, tente novamente.'
       )
     }
-    console.log('Cliquei na tarefa:', task.id)
+
     onDeleteSucess(task.id)
     setDeleteIsLoading(false)
   }
