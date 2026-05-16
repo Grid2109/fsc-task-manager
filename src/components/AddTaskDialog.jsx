@@ -49,12 +49,21 @@ export const AddTaskDialog = ({
     }
 
     onSubmitSucess(task)
-    handleClose()
     reset({
       title: '',
       time: '',
       description: '',
     })
+    handleClose()
+  }
+
+  const handleCancelClick = () => {
+    reset({
+      title: '',
+      time: 'morning',
+      description: '',
+    })
+    handleClose()
   }
 
   return (
@@ -126,7 +135,7 @@ export const AddTaskDialog = ({
                     size='large'
                     color='secondary'
                     className='w-full'
-                    onClick={() => handleClose()}
+                    onClick={handleCancelClick}
                     type='button'
                   >
                     Cancelar
