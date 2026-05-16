@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { toast } from 'sonner'
@@ -17,14 +18,13 @@ import { TimeSelect } from '../components/TimeSelect'
 export const TaskDetailsPage = () => {
   const { taskId } = useParams()
   const [task, setTask] = useState()
-  const [errors, setErrors] = useState([])
-  const [savingIsLoading, setSavingIsLoading] = useState(false)
-
-  const titleRef = useRef()
-  const descriptionRef = useRef()
-  const timeRef = useRef()
-
   const navigate = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm()
 
   const handleBackClick = () => {
     navigate(-1)
@@ -37,56 +37,27 @@ export const TaskDetailsPage = () => {
       })
       const data = await response.json()
       setTask(data)
+      reset(data)
     }
 
     fetchTasks()
-  }, [taskId])
+  }, [taskId, reset])
 
-  const handleSaveClick = async () => {
-    setSavingIsLoading(true)
-    const newErrors = []
-
-    const title = titleRef.current.value
-    const description = descriptionRef.current.value
-    const time = timeRef.current.value
-
-    if (!title.trim()) {
-      newErrors.push({
-        inputName: 'title',
-        message: 'O título é obrigatório',
-      })
-    }
-    if (!description.trim()) {
-      newErrors.push({
-        inputName: 'description',
-        message: 'A descrição é obrigatória',
-      })
-    }
-    if (!time.trim()) {
-      newErrors.push({
-        inputName: 'time',
-        message: 'O horário é obrigatório',
-      })
-    }
-
-    setErrors(newErrors)
-
-    if (newErrors.length > 0) {
-      return setSavingIsLoading(false)
-    }
-
+  const handleSaveClick = async (data) => {
     const response = await fetch(`http://localhost:3000/tasks/${taskId}`, {
       method: 'PATCH',
-      body: JSON.stringify({ title, time, description }),
+      body: JSON.stringify({
+        title: data.title.trim(),
+        time: data.time,
+        description: data.description.trim(),
+      }),
     })
     if (!response.ok) {
       toast.error('Erro ao atualizar a tarefa. Por favor, tente novamente.')
-      return setSavingIsLoading(false)
     }
 
     const newTask = await response.json()
     setTask(newTask)
-    setSavingIsLoading(false)
     toast.success('Tarefa atualizada com sucesso!')
   }
 
@@ -100,12 +71,6 @@ export const TaskDetailsPage = () => {
     toast.success('Tarefa deletada com sucesso!')
     navigate(-1)
   }
-
-  const titleError = errors.find((error) => error.inputName === 'title')
-  const descriptionError = errors.find(
-    (error) => error.inputName === 'description'
-  )
-  const timeError = errors.find((error) => error.inputName === 'time')
 
   return (
     <div className='flex'>
@@ -143,45 +108,59 @@ export const TaskDetailsPage = () => {
           </Button>
         </div>
 
-        <div className='space-y-6 rounded-xl bg-brand-white p-6'>
-          <div>
-            <Input
-              id='title'
-              label='Título'
-              defaultValue={task?.title}
-              errorMessage={titleError?.message}
-              ref={titleRef}
-            />
+        <form onSubmit={handleSubmit(handleSaveClick)}>
+          <div className='space-y-6 rounded-xl bg-brand-white p-6'>
+            <div>
+              <Input
+                id='title'
+                label='Título'
+                {...register('title', {
+                  required: 'O título é obrigatório.',
+                  validate: (value) => {
+                    if (!value.trim()) {
+                      return 'O título não pode ser vazio.'
+                    }
+                  },
+                })}
+                errorMessage={errors?.title?.message}
+              />
+            </div>
+            <div>
+              <TimeSelect
+                {...register('time', { required: 'O horário é obrigatório' })}
+                errorMessage={errors?.time?.message}
+              />
+            </div>
+            <div>
+              <Input
+                id='description'
+                label='Descrição'
+                {...register('description', {
+                  required: 'A descrição é obrigatória.',
+                  validate: (value) => {
+                    if (!value.trim()) {
+                      return 'A descrição não pode ser vazia.'
+                    }
+                  },
+                })}
+                errorMessage={errors?.description?.message}
+              />
+            </div>
           </div>
-          <div>
-            <TimeSelect
-              defaultValue={task?.time}
-              errorMessage={timeError?.message}
-              ref={timeRef}
-            />
-          </div>
-          <div>
-            <Input
-              id='description'
-              label='Descrição'
-              defaultValue={task?.description}
-              errorMessage={descriptionError?.message}
-              ref={descriptionRef}
-            />
-          </div>
-        </div>
 
-        <div className='flex w-full justify-end gap-3'>
-          <Button
-            size='large'
-            color='primary'
-            onClick={handleSaveClick}
-            disabled={savingIsLoading}
-          >
-            {savingIsLoading && <LoaderIcon className='animate-spin' />}
-            Salvar
-          </Button>
-        </div>
+          <div className='flex w-full justify-end gap-3'>
+            <Button
+              size='large'
+              color='primary'
+              onClick={handleSaveClick}
+              disabled={isSubmitting}
+              type='submit'
+            >
+              {isSubmitting && <LoaderIcon className='animate-spin' />}
+              Salvar
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   )
