@@ -1,59 +1,45 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "Estudar React",
-      "description": "Completar o curso de React na plataforma FSC",
+      "id": "c281367e-cd8d-470a-9472-548b098284df",
+      "title": "Fazer bolo",
       "time": "morning",
-      "status": "done"
-    },
-    {
-      "id": "3",
-      "title": "Treinar",
-      "description": "Fazer um treino de 30 minutos",
-      "time": "morning",
-      "status": "in_progress"
-    },
-    {
-      "id": "4",
-      "title": "Fazer compras",
-      "description": "Comprar mantimentos para a semana",
-      "time": "evening",
-      "status": "in_progress"
-    },
-    {
-      "id": "94001b93-0208-4826-82a6-6a6878a0b976",
-      "title": "teste1",
-      "description": "teste1",
-      "time": "evening",
+      "description": "cenoura com calda de chocolate e brigadeiro",
       "status": "not_started"
     },
     {
-      "id": "817718ec-926a-4061-847f-c0192d8b06e4",
-      "title": "Fazer o almoço de sábado",
+      "id": "8aa5db73-20fd-4f4d-bd00-36c474f6708a",
+      "title": "Estudar FSC",
       "time": "morning",
-      "description": "Cardápio: macarrão ao molho branco, berinjela empanada e frango empanado na farinha Panko",
+      "description": "React query",
       "status": "not_started"
     },
     {
-      "id": "b99d4ae5-c562-43da-97b4-3e763f8de182",
-      "title": "React Hook Form",
+      "id": "455dcd49-bf90-4a6e-bfa3-dda8de2a72c8",
+      "title": "Mercado",
+      "time": "evening",
+      "description": "Comprar caixa fechada com leites PIRACANJUBA",
+      "status": "not_started"
+    },
+    {
+      "id": "0a202fe0-cac7-441d-863b-2a95584f028b",
+      "title": "Revisão FSC",
       "time": "morning",
-      "description": "Implementar validação com a lib no AddTaskDialog",
+      "description": "React Query",
       "status": "not_started"
     },
     {
-      "id": "346f6705-2a46-41f7-aa9b-2f65f408e14c",
-      "title": "Testing",
+      "id": "bd546066-7898-4848-a1e9-1bf805b8928e",
+      "title": "Academia Vale Fit",
       "time": "evening",
-      "description": "test",
+      "description": "Treinar costas ombros  bíceps e anti-braço",
       "status": "not_started"
     },
     {
-      "id": "63b1e027-50b3-4cb0-9560-1ea1be0fc587",
-      "title": "teste67823",
-      "time": "evening",
-      "description": "babajabjabj",
+      "id": "4ca8cdec-db49-4973-b084-963537c06b80",
+      "title": "Almoço",
+      "time": "morning",
+      "description": "Arroz feijão salsicha macarrão",
       "status": "not_started"
     }
   ]

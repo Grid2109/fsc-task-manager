@@ -1,8 +1,10 @@
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import PropTypes from 'prop-types'
 import { useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useForm } from 'react-hook-form'
 import { CSSTransition } from 'react-transition-group'
+import { toast } from 'sonner'
 import { v4 } from 'uuid'
 
 import { LoaderIcon } from '../assets/icons'
@@ -10,17 +12,26 @@ import { Button } from './Button'
 import { Input } from './Input'
 import { TimeSelect } from './TimeSelect'
 
-export const AddTaskDialog = ({
-  isOpen,
-  handleClose,
-  onSubmitSucess,
-  onSubmitError,
-}) => {
+export const AddTaskDialog = ({ isOpen, handleClose }) => {
+  const queryClient = useQueryClient()
+  const { mutate, isPending } = useMutation({
+    mutationKey: 'addTask',
+    mutationFn: async (task) => {
+      const response = await fetch('http://localhost:3000/tasks', {
+        method: 'POST',
+        body: JSON.stringify(task),
+      })
+      if (!response.ok) {
+        throw new Error()
+      }
+      return response.json()
+    },
+  })
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm({
     defaultValues: {
       title: '',
@@ -40,21 +51,21 @@ export const AddTaskDialog = ({
       status: 'not_started',
     }
 
-    const response = await fetch('http://localhost:3000/tasks', {
-      method: 'POST',
-      body: JSON.stringify(task),
+    mutate(task, {
+      onSuccess: () => {
+        queryClient.setQueryData(['tasks'], (oldTasks) => {
+          return [...oldTasks, task]
+        })
+        handleClose()
+        reset({
+          title: '',
+          time: 'morning',
+          description: '',
+        })
+      },
+      onError: () =>
+        toast.error('Erro ao adicionar tarefa. Por favor, tente novamente.'),
     })
-    if (!response.ok) {
-      return onSubmitError()
-    }
-
-    onSubmitSucess(task)
-    reset({
-      title: '',
-      time: '',
-      description: '',
-    })
-    handleClose()
   }
 
   const handleCancelClick = () => {
@@ -97,7 +108,7 @@ export const AddTaskDialog = ({
                   label='Título'
                   placeholder='título da tarefa'
                   errorMessage={errors?.title?.message}
-                  disabled={isSubmitting}
+                  disabled={isPending}
                   {...register('title', {
                     required: 'O título é obrigatório.',
                     validate: (value) => {
@@ -110,7 +121,7 @@ export const AddTaskDialog = ({
 
                 <TimeSelect
                   errorMessage={errors?.time?.message}
-                  disabled={isSubmitting}
+                  disabled={isPending}
                   {...register('time', {
                     required: 'O horário é obrigatório',
                   })}
@@ -120,7 +131,7 @@ export const AddTaskDialog = ({
                   label='Descrição'
                   placeholder='Descreva a tarefa'
                   errorMessage={errors?.description?.message}
-                  disabled={isSubmitting}
+                  disabled={isPending}
                   {...register('description', {
                     required: 'A descrição é obrigatória.',
                     validate: (value) => {
@@ -141,13 +152,12 @@ export const AddTaskDialog = ({
                     Cancelar
                   </Button>
                   <Button
-                    onClick={handleSaveClick}
                     size='large'
                     className='w-full'
-                    disabled={isSubmitting}
+                    disabled={isPending}
                     type='submit'
                   >
-                    {isSubmitting && <LoaderIcon className='animate-spin' />}
+                    {isPending && <LoaderIcon className='animate-spin' />}
                     Salvar
                   </Button>
                 </div>
@@ -164,5 +174,4 @@ export const AddTaskDialog = ({
 AddTaskDialog.prototype = {
   isOpen: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
-  onSubmitSucess: PropTypes.func.isRequired,
 }
