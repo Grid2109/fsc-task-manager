@@ -12,6 +12,9 @@ Lista de tarefas
 <img width="1898" height="916" alt="page-tasks-status-not_started" src="https://github.com/user-attachments/assets/52e1fa2c-3d49-4575-9014-33e84ed7773b" />
 <img width="1873" height="904" alt="page-tasks-status-in_progress" src="https://github.com/user-attachments/assets/34692a38-0893-4d85-80a0-4cabd6e822b4" />
 <img width="1887" height="883" alt="page-tsks-done" src="https://github.com/user-attachments/assets/08d08230-ba5c-4937-879f-ad5884642c25" />
+<img width="1902" height="880" alt="add-task" src="https://github.com/user-attachments/assets/58fccfc4-8fcf-4825-becd-407b62c4cd21" />
+
+
 
 
 
