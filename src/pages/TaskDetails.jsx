@@ -1,4 +1,4 @@
-import { useMutation, useQuery,useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -24,6 +24,7 @@ export const TaskDetailsPage = () => {
     reset,
     formState: { errors },
   } = useForm()
+  const queryClient = useQueryClient()
   const { mutate: deleteTask, isPending: deleteTaskIsLoading } = useMutation({
     mutationKey: ['deleteTask', taskId],
     mutationFn: async () => {
@@ -65,15 +66,19 @@ export const TaskDetailsPage = () => {
       })
     },
   })
-  const queryClient = useQueryClient()
+
   const { data: task } = useQuery({
     queryKey: ['task', taskId],
     queryFn: async () => {
       const response = await fetch(`http://localhost:3000/tasks/${taskId}`, {
         method: 'GET',
       })
-      const data = await response.json()
-      reset(data)
+      if (!response.ok) {
+        throw new Error('Erro ao buscar tarefa')
+      }
+      const taskData = await response.json()
+      reset(taskData)
+      return taskData
     },
   })
 

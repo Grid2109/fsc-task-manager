@@ -3,7 +3,7 @@
     {
       "id": "c281367e-cd8d-470a-9472-548b098284df",
       "title": "Fazer bolo",
-      "time": "morning",
+      "time": "evening",
       "description": "cenoura com calda de chocolate e brigadeiro",
       "status": "not_started"
     },
@@ -24,14 +24,14 @@
     {
       "id": "0a202fe0-cac7-441d-863b-2a95584f028b",
       "title": "Revisão FSC",
-      "time": "morning",
+      "time": "afternoon",
       "description": "React Query",
       "status": "not_started"
     },
     {
       "id": "bd546066-7898-4848-a1e9-1bf805b8928e",
       "title": "Academia Vale Fit",
-      "time": "evening",
+      "time": "afternoon",
       "description": "Treinar costas ombros  bíceps e anti-braço",
       "status": "not_started"
     },
