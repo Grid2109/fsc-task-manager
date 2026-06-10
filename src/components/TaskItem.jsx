@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import { toast } from 'sonner'
 
 import { CheckIcon, DetailsIcon, LoaderIcon, TrashIcon } from '../assets/icons'
-import { useDeleTask } from '../hooks/data/use-delete-task'
+import { useDeleteTask } from '../hooks/data/use-delete-task'
 import { Button } from './Button'
 
 export const TaskItem = ({ task, handleCheckboxClick }) => {
-  const { mutate: deleteTask, isPending } = useDeleTask(task.id)
+  const { mutate: deleteTask, isPending } = useDeleteTask(task.id)
 
   const handleDeleteClick = async () => {
     deleteTask(undefined, {

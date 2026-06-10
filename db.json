@@ -1,52 +1,17 @@
 {
   "tasks": [
     {
-      "id": "c281367e-cd8d-470a-9472-548b098284df",
-      "title": "Fazer bolo",
+      "id": "79d1cf5f-d90d-437b-a575-30e5cc0a7760",
+      "title": "test2345",
       "time": "evening",
-      "description": "cenoura com calda de chocolate e brigadeiro",
+      "description": "test2",
       "status": "not_started"
     },
     {
-      "id": "8aa5db73-20fd-4f4d-bd00-36c474f6708a",
-      "title": "Estudar FSC",
-      "time": "morning",
-      "description": "React query",
-      "status": "not_started"
-    },
-    {
-      "id": "455dcd49-bf90-4a6e-bfa3-dda8de2a72c8",
-      "title": "Mercado",
+      "id": "ac7a0728-d110-46c5-b08c-119604b5e59a",
+      "title": "test5",
       "time": "evening",
-      "description": "Comprar caixa fechada com leites PIRACANJUBA",
-      "status": "not_started"
-    },
-    {
-      "id": "0a202fe0-cac7-441d-863b-2a95584f028b",
-      "title": "Revisão FSC",
-      "time": "afternoon",
-      "description": "React Query",
-      "status": "not_started"
-    },
-    {
-      "id": "bd546066-7898-4848-a1e9-1bf805b8928e",
-      "title": "Academia Vale Fit",
-      "time": "afternoon",
-      "description": "Treinar costas ombros  bíceps e anti-braço",
-      "status": "not_started"
-    },
-    {
-      "id": "4ca8cdec-db49-4973-b084-963537c06b80",
-      "title": "Almoço",
-      "time": "morning",
-      "description": "Arroz feijão salsicha macarrão",
-      "status": "not_started"
-    },
-    {
-      "id": "9153f0c7-cb04-472e-ae16-390a55cc852f",
-      "title": "test",
-      "time": "morning",
-      "description": "test",
+      "description": "test5",
       "status": "not_started"
     }
   ]
