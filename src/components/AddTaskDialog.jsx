@@ -46,6 +46,7 @@ export const AddTaskDialog = ({ isOpen, handleClose }) => {
           time: 'morning',
           description: '',
         })
+        toast.success('Tarefa adicionada com sucesso!')
       },
       onError: () =>
         toast.error('Erro ao adicionar tarefa. Por favor, tente novamente.'),

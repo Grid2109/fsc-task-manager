@@ -13,6 +13,27 @@
       "time": "afternoon",
       "description": "Postar meu aprendizado com a lib do Axios",
       "status": "not_started"
+    },
+    {
+      "id": "7c8f5579-95c8-46ac-b988-9f4243edcd6b",
+      "title": "Tomar banho",
+      "time": "evening",
+      "description": "antes das 17h",
+      "status": "not_started"
+    },
+    {
+      "id": "9d4f0c2e-5ed9-49c1-ab1c-917c3575bf72",
+      "title": "Academia",
+      "time": "morning",
+      "description": "TReinar superiores",
+      "status": "not_started"
+    },
+    {
+      "id": "7165eaf5-e696-4f98-abdf-9ce4ee04ffbb",
+      "title": "Bootcamp Bradesco",
+      "time": "morning",
+      "description": "Concluir os módulos de engenheiro de prompt",
+      "status": "not_started"
     }
   ]
 }
