@@ -1,13 +1,6 @@
 {
   "tasks": [
     {
-      "id": "cd904dfb-ff3b-496a-95f6-dc95488f8a2c",
-      "title": "Lanche",
-      "time": "evening",
-      "description": "Fritar guioza",
-      "status": "not_started"
-    },
-    {
       "id": "e6a48563-d8d5-40e9-92be-0ed180b24a37",
       "title": "Post Linkedin",
       "time": "afternoon",
@@ -15,16 +8,9 @@
       "status": "not_started"
     },
     {
-      "id": "7c8f5579-95c8-46ac-b988-9f4243edcd6b",
-      "title": "Tomar banho",
-      "time": "evening",
-      "description": "antes das 17h",
-      "status": "not_started"
-    },
-    {
       "id": "9d4f0c2e-5ed9-49c1-ab1c-917c3575bf72",
-      "title": "Academia",
-      "time": "morning",
+      "title": "Academia VALE FIT",
+      "time": "afternoon",
       "description": "TReinar superiores",
       "status": "not_started"
     },
@@ -40,6 +26,13 @@
       "title": "Estudar Azure",
       "time": "evening",
       "description": "Concluir as aulas da etapa 1",
+      "status": "not_started"
+    },
+    {
+      "id": "86eb8a12-6c3c-4e40-947f-18b1d0fa0484",
+      "title": "Lanche",
+      "time": "evening",
+      "description": "preparar um lanche com ovo, maionese, alface e queijo",
       "status": "not_started"
     }
   ]
