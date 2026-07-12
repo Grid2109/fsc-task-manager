@@ -34,6 +34,13 @@
       "time": "morning",
       "description": "Concluir os módulos de engenheiro de prompt",
       "status": "not_started"
+    },
+    {
+      "id": "3e20bd94-1964-4d8e-9cd6-8a42755f7672",
+      "title": "Estudar Azure",
+      "time": "evening",
+      "description": "Concluir as aulas da etapa 1",
+      "status": "not_started"
     }
   ]
 }
