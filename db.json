@@ -5,13 +5,13 @@
       "title": "Post Linkedin",
       "time": "afternoon",
       "description": "Postar meu aprendizado com a lib do Axios",
-      "status": "not_started"
+      "status": "done"
     },
     {
       "id": "9d4f0c2e-5ed9-49c1-ab1c-917c3575bf72",
       "title": "Academia VALE FIT",
       "time": "afternoon",
-      "description": "TReinar superiores",
+      "description": "Treinar inferiores",
       "status": "not_started"
     },
     {
@@ -19,21 +19,28 @@
       "title": "Bootcamp Bradesco",
       "time": "morning",
       "description": "Concluir os módulos de engenheiro de prompt",
-      "status": "not_started"
+      "status": "in_progress"
     },
     {
       "id": "3e20bd94-1964-4d8e-9cd6-8a42755f7672",
       "title": "Estudar Azure",
       "time": "evening",
       "description": "Concluir as aulas da etapa 1",
-      "status": "not_started"
+      "status": "done"
     },
     {
       "id": "86eb8a12-6c3c-4e40-947f-18b1d0fa0484",
       "title": "Lanche",
       "time": "evening",
       "description": "preparar um lanche com ovo, maionese, alface e queijo",
-      "status": "not_started"
+      "status": "done"
+    },
+    {
+      "id": "328aadf6-0ef7-4bcb-bb20-f6c7fe58bc56",
+      "title": "FSC",
+      "time": "morning",
+      "description": "Estudar Backend",
+      "status": "in_progress"
     }
   ]
 }

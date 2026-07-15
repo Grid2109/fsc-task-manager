@@ -4,10 +4,38 @@ import { toast } from 'sonner'
 
 import { CheckIcon, DetailsIcon, LoaderIcon, TrashIcon } from '../assets/icons'
 import { useDeleteTask } from '../hooks/data/use-delete-task'
+import { useUpdateTask } from '../hooks/data/use-update-task'
 import { Button } from './Button'
 
-export const TaskItem = ({ task, handleCheckboxClick }) => {
+export const TaskItem = ({ task }) => {
   const { mutate: deleteTask, isPending } = useDeleteTask(task.id)
+  const { mutate } = useUpdateTask(task.id)
+
+  const getNewStatus = () => {
+    if (task.status === 'not_started') {
+      return 'in_progress'
+    }
+    if (task.status === 'in_progress') {
+      return 'done'
+    }
+    return 'not_started'
+  }
+
+  const handleCheckboxClick = () => {
+    mutate(
+      {
+        status: getNewStatus(),
+      },
+      {
+        onSuccess: () =>
+          toast.success('Status da tarefa atualizado com sucesso!'),
+        onError: () =>
+          toast.error(
+            'Erro ao atualizar status da tarefa. Por favor, tente novamente.'
+          ),
+      }
+    )
+  }
 
   const handleDeleteClick = async () => {
     deleteTask(undefined, {
@@ -44,11 +72,11 @@ export const TaskItem = ({ task, handleCheckboxClick }) => {
             type='checkbox'
             checked={task.status === 'done'}
             className='absolute h-full w-full cursor-pointer opacity-0'
-            onChange={() => handleCheckboxClick(task.id)}
+            onChange={handleCheckboxClick}
           />
           {task.status === 'done' && <CheckIcon />}
           {task.status === 'in_progress' && (
-            <LoaderIcon className='animate-spin text-brand-process' />
+            <LoaderIcon className='h-3 w-3 animate-spin text-white' />
           )}
         </label>
         {task.title}
@@ -79,5 +107,4 @@ TaskItem.propTypes = {
     time: PropTypes.oneOf(['morning', 'afternoon', 'evening']).isRequired,
     status: PropTypes.oneOf(['not_started', 'in_progress', 'done']).isRequired,
   }).isRequired,
-  handleCheckboxClick: PropTypes.func.isRequired,
 }

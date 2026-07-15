@@ -7,7 +7,7 @@ export const DashboardCard = ({ icon, mainText, secondaryText }) => {
           {mainText}
         </p>
       </div>
-      {secondaryText}
+      <p className='text-center'> {secondaryText}</p>
     </div>
   )
 }

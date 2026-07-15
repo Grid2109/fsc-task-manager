@@ -15,9 +15,7 @@ export const HomePage = () => {
   const inProgressTasks = tasks?.filter(
     (task) => task.status === 'in_progress'
   ).length
-  const completedTasks = tasks?.filter(
-    (task) => task.status === 'completed'
-  ).length
+  const completedTasks = tasks?.filter((task) => task.status === 'done').length
 
   return (
     <div className='flex'>
@@ -36,7 +34,7 @@ export const HomePage = () => {
             secondaryText='Tarefas concluídas'
           />
           <DashboardCard
-            icon={<LoaderIcon className='text-brand-primary' />}
+            icon={<LoaderIcon />}
             mainText={inProgressTasks}
             secondaryText='Tarefas em andamento'
           />
