@@ -41,6 +41,13 @@
       "time": "morning",
       "description": "Estudar Backend",
       "status": "in_progress"
+    },
+    {
+      "id": "46e66a9f-8bb9-472c-aa79-3b5547fdaa0d",
+      "title": "Passar no postinho",
+      "time": "afternoon",
+      "description": "Pegar receita médica",
+      "status": "not_started"
     }
   ]
 }
