@@ -8,7 +8,7 @@ export const useDeleteTask = (taskId) => {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationKey: taskMutationKeys.delete(taskId),
+    mutationKey: taskMutationKeys.delete(),
     mutationFn: async () => {
       const { data: deleteTask } = await api.delete(`/tasks/${taskId}`)
       return deleteTask
@@ -18,7 +18,9 @@ export const useDeleteTask = (taskId) => {
         if (!oldTasks) return oldTasks
         return oldTasks.filter((oldTask) => oldTask.id !== deleteTask.id)
       })
-      queryClient.removeQueries({ queryKey: ['task', taskId] })
+      queryClient.removeQueries({
+        queryKey: taskQueryKeys.getOne(deleteTask.id),
+      })
     },
   })
 }
