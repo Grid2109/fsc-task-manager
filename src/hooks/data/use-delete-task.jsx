@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { taskMutationKeys } from '../../keys/mutations'
+import { taskQueryKeys } from '../../keys/queries'
 import { api } from '../../lib/axios'
 
 export const useDeleteTask = (taskId) => {
@@ -13,7 +14,7 @@ export const useDeleteTask = (taskId) => {
       return deleteTask
     },
     onSuccess: (deleteTask) => {
-      queryClient.setQueryData(['tasks'], (oldTasks) => {
+      queryClient.setQueryData(taskQueryKeys.getAll(), (oldTasks) => {
         if (!oldTasks) return oldTasks
         return oldTasks.filter((oldTask) => oldTask.id !== deleteTask.id)
       })
