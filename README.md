@@ -17,6 +17,8 @@ A aplicação está disponível online no link acima. Abaixo estão capturas de 
 ### Dashboard
 
 Página inicial com cards de resumo, lista de tarefas e mensagem motivacional.
+<img width="1912" height="915" alt="image" src="https://github.com/user-attachments/assets/58cf292d-21dc-45f4-ae79-0d10d12906b5" />
+
 
 ### Lista de tarefas
 
