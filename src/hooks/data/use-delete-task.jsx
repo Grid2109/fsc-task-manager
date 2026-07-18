@@ -13,13 +13,13 @@ export const useDeleteTask = (taskId) => {
       const { data: deleteTask } = await api.delete(`/tasks/${taskId}`)
       return deleteTask
     },
-    onSuccess: (deleteTask) => {
+    onSuccess: () => {
       queryClient.setQueryData(taskQueryKeys.getAll(), (oldTasks) => {
         if (!oldTasks) return oldTasks
-        return oldTasks.filter((oldTask) => oldTask.id !== deleteTask.id)
+        return oldTasks.filter((task) => task.id !== taskId)
       })
       queryClient.removeQueries({
-        queryKey: taskQueryKeys.getOne(deleteTask.id),
+        queryKey: taskQueryKeys.getOne(taskId),
       })
     },
   })
