@@ -1,20 +1,6 @@
 {
   "tasks": [
     {
-      "id": "e6a48563-d8d5-40e9-92be-0ed180b24a37",
-      "title": "Post Linkedin",
-      "time": "afternoon",
-      "description": "Postar meu aprendizado com a lib do Axios",
-      "status": "done"
-    },
-    {
-      "id": "9d4f0c2e-5ed9-49c1-ab1c-917c3575bf72",
-      "title": "Academia VALE FIT",
-      "time": "afternoon",
-      "description": "Treinar inferiores",
-      "status": "not_started"
-    },
-    {
       "id": "3e20bd94-1964-4d8e-9cd6-8a42755f7672",
       "title": "Estudar Azure",
       "time": "evening",
@@ -23,9 +9,9 @@
     },
     {
       "id": "86eb8a12-6c3c-4e40-947f-18b1d0fa0484",
-      "title": "Lanche",
+      "title": "Lanche de frango",
       "time": "evening",
-      "description": "preparar um lanche com ovo, maionese, alface e queijo",
+      "description": "preparar um lanche com frango, maionese, alface e queijo",
       "status": "done"
     },
     {

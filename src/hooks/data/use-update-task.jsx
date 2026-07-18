@@ -21,11 +21,11 @@ export const useUpdateTask = (taskId) => {
     onSuccess: (updatedTask) => {
       queryClient.setQueryData(taskQueryKeys.getAll(), (oldTasks) => {
         if (!oldTasks) return oldTasks
-        return oldTasks.map((oldTask) => {
-          if (oldTask.id === taskId) {
+        return oldTasks.map((task) => {
+          if (task.id === taskId) {
             return updatedTask
           }
-          return oldTask
+          return task
         })
       })
       queryClient.setQueryData(taskQueryKeys.getOne(taskId), updatedTask)
