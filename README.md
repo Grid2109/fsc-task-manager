@@ -19,15 +19,14 @@ A aplicação está disponível online no link acima. Abaixo estão capturas de 
 Página inicial com cards de resumo, lista de tarefas e mensagem motivacional.
 <img width="1912" height="915" alt="image" src="https://github.com/user-attachments/assets/58cf292d-21dc-45f4-ae79-0d10d12906b5" />
 
-
 ### Lista de tarefas
 
 <img width="1898" height="916" alt="page-tasks-status-not_started" src="https://github.com/user-attachments/assets/52e1fa2c-3d49-4575-9014-33e84ed7773b" />
 <img width="1873" height="904" alt="page-tasks-status-in_progress" src="https://github.com/user-attachments/assets/34692a38-0893-4d85-80a0-4cabd6e822b4" />
 <img width="1887" height="883" alt="page-tsks-done" src="https://github.com/user-attachments/assets/08d08230-ba5c-4937-879f-ad5884642c25" />
 
-
 ### Modal que adiciona uma nova tarefa
+
 <img width="1902" height="880" alt="add-task" src="https://github.com/user-attachments/assets/58fccfc4-8fcf-4825-becd-407b62c4cd21" />
 
 ### Detalhes da tarefa
@@ -46,6 +45,14 @@ Página inicial com cards de resumo, lista de tarefas e mensagem motivacional.
 - Navegação com sidebar e destaque da rota ativa
 - Atualização de cache com React Query para feedback mais rápido na UI
 - Validação de formulário com React Hook Form
+
+## Limitações conhecidas
+
+A API deste projeto usa JSON Server, que persiste os dados escrevendo em um arquivo (`db.json`). Isso funciona perfeitamente em ambiente local, mas em produção na Vercel — que roda a API como função serverless — o sistema de arquivos é somente leitura, com exceção de uma pasta temporária que não persiste entre requisições.
+
+Na prática, isso significa que criar, editar ou excluir tarefas no ambiente publicado ([link da API](https://fsc-task-manager-api-nine.vercel.app)) pode não refletir de forma permanente: os dados podem reverter já que cada requisição pode ser atendida por uma instância diferente da função, sem memória compartilhada entre elas.
+
+**Próximo passo:** migrar a persistência para um banco de dados real, desacoplado da função serverless.
 
 ## Tecnologias
 
