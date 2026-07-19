@@ -54,6 +54,8 @@ Na prática, isso significa que criar, editar ou excluir tarefas no ambiente pub
 
 **Próximo passo:** migrar a persistência para um banco de dados real, desacoplado da função serverless.
 
+A interface também ainda não está adaptada para telas menores (responsividade). O layout foi desenvolvido priorizando desktop, e ajustes para mobile/tablet ainda serão feitos em uma próxima etapa do projeto.
+
 ## Tecnologias
 
 - React
